@@ -12,6 +12,7 @@
 		B42D63042208EB7F00346AF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B42D63032208EB7F00346AF7 /* Assets.xcassets */; };
 		B42D63072208EB7F00346AF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B42D63052208EB7F00346AF7 /* LaunchScreen.storyboard */; };
 		B42D63112208ED9200346AF7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42D63102208ED9200346AF7 /* Post.swift */; };
+		B42D63142208F14E00346AF7 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42D63132208F14E00346AF7 /* PostController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		B42D63062208EB7F00346AF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B42D63082208EB7F00346AF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B42D63102208ED9200346AF7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		B42D63132208F14E00346AF7 /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				B42D63122208EE1600346AF7 /* Model */,
+				B42D63152208F15600346AF7 /* Model Controller */,
 				B42D630F2208ECEF00346AF7 /* Storyboard */,
 				B42D630E2208EB9B00346AF7 /* Resources */,
 			);
@@ -86,6 +89,14 @@
 				B42D63102208ED9200346AF7 /* Post.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B42D63152208F15600346AF7 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B42D63132208F14E00346AF7 /* PostController.swift */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +172,7 @@
 			files = (
 				B42D62FD2208EB7E00346AF7 /* AppDelegate.swift in Sources */,
 				B42D63112208ED9200346AF7 /* Post.swift in Sources */,
+				B42D63142208F14E00346AF7 /* PostController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

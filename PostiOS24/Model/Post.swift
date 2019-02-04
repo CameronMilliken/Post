@@ -9,7 +9,7 @@
 import Foundation
 
 struct topLevelDictionary: Codable {
-    let posts: [Post]
+    
 }
 
 struct Post: Codable {
@@ -17,9 +17,9 @@ struct Post: Codable {
     let text: String
     var timestamp = TimeInterval()
     
-//    init(username: String, text: String, timestamp: TimeInterval = Date().timeIntervalSince1970){
-//        self.username = username
-//        self.text = text
-//        self.timestamp = timestamp
-//    }
+    init(username: String, text: String, timestamp: TimeInterval = Date().timeIntervalSince1970){
+        self.username = username
+        self.text = text
+        self.timestamp = timestamp
+    }
 }
