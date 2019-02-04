@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct topLevelDictionary: Codable {
+struct TopLevelDictionary: Codable {
+    let posts: [Post]
     
 }
 
