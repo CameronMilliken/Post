@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qVq-mN-xVf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -49,7 +49,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="jKn-H1-Ffn" id="B9J-Yy-yuu"/>
-                                    <outlet property="delegate" destination="jKn-H1-Ffn" id="7cY-E9-egB"/>
+                                    <outlet property="delegate" destination="jKn-H1-Ffn" id="5iE-bX-Lah"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -63,6 +63,9 @@
                         <viewLayoutGuide key="safeArea" id="zGn-dI-fTz"/>
                     </view>
                     <navigationItem key="navigationItem" id="iVC-KT-qI7"/>
+                    <connections>
+                        <outlet property="tableView" destination="fYF-iC-KDk" id="Izu-JR-fLC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RO2-g2-7BR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

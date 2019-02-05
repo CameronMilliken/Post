@@ -61,8 +61,8 @@
 				B42D63122208EE1600346AF7 /* Model */,
 				B42D63152208F15600346AF7 /* Model Controller */,
 				B42D630F2208ECEF00346AF7 /* Storyboard */,
+				B42D633A220A185C00346AF7 /* View Controller */,
 				B42D630E2208EB9B00346AF7 /* Resources */,
-				B42D6318220905AD00346AF7 /* PostListViewController.swift */,
 			);
 			path = PostiOS24;
 			sourceTree = "<group>";
@@ -100,6 +100,14 @@
 				B42D63132208F14E00346AF7 /* PostController.swift */,
 			);
 			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		B42D633A220A185C00346AF7 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B42D6318220905AD00346AF7 /* PostListViewController.swift */,
+			);
+			path = "View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
