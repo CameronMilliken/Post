@@ -8,15 +8,23 @@
 
 import UIKit
 
-class PostListViewController: UIViewController {
+class PostListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    // MARK: - Properties
+    let refreshControl = UIRefreshControl()
     
     @IBOutlet weak var tableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.reloadTableView()
         
-        // Do any additional setup after loading the view.
+    }
+    
+    
+    @IBAction func addButtonTapped(_ sender: Any) {
+        presentNewPostAlert()
     }
     
     // MARK: - TableView
@@ -32,24 +40,23 @@ class PostListViewController: UIViewController {
         return cell
     }
     
+    @objc func refreshControlPulled() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        refreshControl.addTarget(self, action: #selector(refreshControlPulled), for: .valueChanged)
+        PostController.fetchPosts {
+            DispatchQueue.main.async {
+                self.refreshControl.endRefreshing()
+            }
+        }
+    }
     
+    func reloadTableView() {
+        DispatchQueue.main.async {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            self.tableView.reloadData()
+        }
+    }
     
-    
-    
-    
-    
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 } // End of Class
 
@@ -80,7 +87,7 @@ extension PostListViewController {
     }
     
     func presentErrorAlert() {
-        let alertController = UIAlertController(title: "Missing Information", message: "Please try again", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Missing Info Yo!", message: "Try again", preferredStyle: .alert)
         let dismissAction = UIAlertAction(title: "Try Again", style: .default) { (_) in
             self.presentNewPostAlert()
         }

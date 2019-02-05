@@ -62,7 +62,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zGn-dI-fTz"/>
                     </view>
-                    <navigationItem key="navigationItem" id="iVC-KT-qI7"/>
+                    <navigationItem key="navigationItem" id="iVC-KT-qI7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cMn-qb-gwr">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="jKn-H1-Ffn" id="fen-Cx-ntN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="fYF-iC-KDk" id="Izu-JR-fLC"/>
                     </connections>

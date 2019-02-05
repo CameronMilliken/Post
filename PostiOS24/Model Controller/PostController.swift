@@ -10,12 +10,6 @@ import Foundation
 
 class PostController {
     
-    //Base URL/API URL
-    let baseURL = URL(string: "https://devmtn-posts.firebaseio.com/posts")
-    
-    //Source of Truth
-    var posts: [Post] = []
-    
     // MARK: - Properties
     static let baseUrl = URL(string: "https://devmtn-posts.firebaseio.com/posts")
     
@@ -29,16 +23,20 @@ class PostController {
         let urlParameters = [
             "orderBy": "\"timestamp\"",
             "endAt": "\(queryEndInterval)",
-            "limitToLast": "15",
-            ]
+            "limitToLast": "15"]
+        
         let queryItems = urlParameters.compactMap { URLQueryItem(name: $0.key, value: $0.value) }
         var urlComponents = URLComponents(url: unwrappedUrl, resolvingAgainstBaseURL: true)
         urlComponents?.queryItems = queryItems
+        
+        
         guard let url = urlComponents?.url else { completion() ; return }
         let getterEndpoint = url.appendingPathExtension("json")
         var request = URLRequest(url: getterEndpoint)
         request.httpMethod = "GET"
         request.httpBody = nil
+        
+        //DataTask
         let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
                 print("There was an error in \(#function) : \(error.localizedDescription)")
@@ -62,6 +60,7 @@ class PostController {
         dataTask.resume()
     }
     
+    //Adds new Post
     static func addNewPostWith(username: String, text: String, completion: @escaping () -> Void) {
         let newPost = Post(username: username, text: text)
         var postData: Data
@@ -92,5 +91,5 @@ class PostController {
             }
             }.resume()
     }
-
+    
 } //End of class
